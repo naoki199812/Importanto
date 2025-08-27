@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,13 +32,21 @@
             z-index: 10;
         }
     </style>
+    <script>
+        window.onload = function() {
+            const audio = document.getElementById('muzyka');
+            audio.play().catch(() => {
+                console.log("Autoplay zablokowany, użyj przycisku.");
+            });
+        };
+    </script>
 </head>
 <body>
     <img src="meme.png" alt="Meme">
     
     <button id="play-button" onclick="document.getElementById('muzyka').play()">Play Music</button>
     
-    <audio id="muzyka" autoplay loop>
+    <audio id="muzyka" loop>
         <source src="muzyka.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
